@@ -27,7 +27,9 @@ st.subheader('User Input parameters')
 st.write(df)
 
 iris = pd.read_csv('https://raw.githubusercontent.com/aaa-yanbin/iris-june/main/IRIS.csv')
-X = iris.drop('species', axis = 1)
+features_col = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+X = iris[features_col]
+# X = iris.drop('species', axis = 1)
 Y = iris.species
 
 clf = RandomForestClassifier()
